@@ -271,7 +271,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
         </div>
 
         {/* User Profile Card */}
-        <div className="mb-8 p-4 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-amber-900/20 dark:to-amber-900/10 rounded-2xl border border-amber-200 dark:border-amber-800/40">
+        <div className="mb-8 p-4 bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-900/10 rounded-2xl border border-amber-200 dark:border-amber-800/40">
           <div className="flex items-center space-x-3 mb-3">
             <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-white font-bold text-sm">
               {(auth.currentUser?.email?.charAt(0) || '?').toUpperCase()}
@@ -632,7 +632,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
               <p className="text-slate-600 dark:text-amber-600/70 mb-6">Share your learning journey with employers and the community</p>
               
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-amber-50 dark:bg-indigo-900/20 rounded-2xl p-6 border border-amber-200 dark:border-amber-800/40">
+                <div className="bg-amber-50 dark:bg-amber-900/20 rounded-2xl p-6 border border-amber-200 dark:border-amber-800/40">
                   <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">Profile URL</p>
                   <p className="text-sm text-slate-700 dark:text-amber-100 font-mono bg-white dark:bg-slate-800 p-3 rounded-lg break-all">prodigyai.dev/user/{auth.currentUser?.uid?.slice(0, 8)}</p>
                 </div>
@@ -838,7 +838,7 @@ const App: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-950">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-amber-500/30 border-t-indigo-500 rounded-full animate-spin mx-auto mb-4" />
           <p className="text-slate-400 font-medium">Loading...</p>
         </div>
       </div>

@@ -100,7 +100,7 @@ export const NotesModal: React.FC<NotesModalProps> = ({
               <button
                 onClick={handleSave}
                 disabled={!noteContent.trim()}
-                className="px-6 py-2 rounded-xl bg-indigo-600 text-white font-bold text-sm uppercase tracking-wider hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-indigo-500/20"
+                className="px-6 py-2 rounded-xl bg-amber-500 text-white font-bold text-sm uppercase tracking-wider hover:bg-amber-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-indigo-500/20"
               >
                 {editingNoteId ? 'Update' : 'Save'} Note
               </button>
@@ -125,7 +125,7 @@ export const NotesModal: React.FC<NotesModalProps> = ({
                     <div className="flex space-x-2">
                       <button
                         onClick={() => handleEdit(note)}
-                        className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline font-bold uppercase tracking-wider"
+                        className="text-xs text-amber-600 dark:text-amber-400 hover:underline font-bold uppercase tracking-wider"
                       >
                         <i className="fas fa-edit mr-1" />
                         Edit

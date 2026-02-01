@@ -32,7 +32,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
       if (entry && entry.tasks.length > 0) {
         return (
           <div className="flex justify-center mt-1">
-            <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full" />
+            <div className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
           </div>
         );
       }
@@ -134,7 +134,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
       </div>
 
       {/* Stats for selected date */}
-      <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-4">
+      <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-4">
         <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
           {selectedDate.toLocaleDateString('en-US', { 
             weekday: 'long', 
@@ -146,7 +146,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
         {tasksOnSelectedDate.length > 0 ? (
           <div>
             <div className="mb-3 flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center">
                 <i className="fas fa-check text-white text-sm" />
               </div>
               <div>

@@ -107,7 +107,7 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ currentPhase, progress
   return (
     <div className="flex flex-col space-y-4">
       {/* Advice Header Card */}
-      <div className="bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-br from-amber-500 to-violet-700 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 p-4 opacity-10">
           <i className="fas fa-rocket text-7xl rotate-12" />
         </div>
@@ -126,7 +126,7 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ currentPhase, progress
           </p>
           <button 
             onClick={() => setIsChatOpen(!isChatOpen)}
-            className="mt-5 w-full bg-white text-indigo-700 hover:bg-indigo-50 py-2.5 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md active:scale-95 flex items-center justify-center space-x-2"
+            className="mt-5 w-full bg-white text-amber-700 hover:bg-amber-50 py-2.5 rounded-xl font-bold text-xs uppercase tracking-widest transition-all shadow-md active:scale-95 flex items-center justify-center space-x-2"
           >
             <i className={`fas fa-${isChatOpen ? 'times' : 'comment-dots'}`} />
             <span>{isChatOpen ? 'Close Chat' : 'Ask Roadmap Doubts'}</span>
@@ -156,7 +156,7 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ currentPhase, progress
               <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] p-4 rounded-2xl text-sm ${
                   msg.role === 'user' 
-                    ? 'bg-indigo-600 text-white rounded-tr-none' 
+                    ? 'bg-amber-500 text-white rounded-tr-none' 
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-tl-none shadow-sm'
                 }`}>
                   {msg.role === 'model' ? (
@@ -192,7 +192,7 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ currentPhase, progress
             <button 
               type="submit"
               disabled={loading}
-              className="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center hover:bg-indigo-700 transition-colors disabled:opacity-50"
+              className="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center hover:bg-amber-600 transition-colors disabled:opacity-50"
             >
               <i className="fas fa-paper-plane" />
             </button>

@@ -173,20 +173,20 @@ export const WeeklyScheduler: React.FC<WeeklySchedulerProps> = ({ progress, them
         </div>
 
         {/* Current Phase Badge */}
-        <div className="mb-8 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 border border-indigo-200 dark:border-indigo-800 rounded-2xl">
+        <div className="mb-8 p-4 bg-gradient-to-r from-amber-50 to-amber-50 dark:from-amber-900/20 dark:to-amber-900/20 border border-amber-200 dark:border-amber-800/40 rounded-2xl">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest mb-1">Current Phase</p>
               <p className="text-2xl font-black text-slate-800 dark:text-white">{currentPhase.title}</p>
             </div>
             <div className="text-right">
-              <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400">{phaseProgress.percentage}%</p>
+              <p className="text-3xl font-black text-amber-600 dark:text-amber-400">{phaseProgress.percentage}%</p>
               <p className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase">Progress</p>
             </div>
           </div>
           <div className="mt-3 bg-white dark:bg-slate-800 rounded-lg h-2 w-full">
             <div 
-              className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2 rounded-lg transition-all"
+              className="bg-gradient-to-r from-amber-500 to-amber-500 h-2 rounded-lg transition-all"
               style={{ width: `${phaseProgress.percentage}%` }}
             ></div>
           </div>
@@ -195,7 +195,7 @@ export const WeeklyScheduler: React.FC<WeeklySchedulerProps> = ({ progress, them
         {/* Phase Tasks Overview */}
         <div className="grid grid-cols-4 gap-4 mb-8">
           <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
-            <p className="text-2xl font-black text-indigo-600 dark:text-indigo-400">{phaseProgress.completed}</p>
+            <p className="text-2xl font-black text-amber-600 dark:text-amber-400">{phaseProgress.completed}</p>
             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-2">Phase Done</p>
           </div>
           <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
@@ -203,7 +203,7 @@ export const WeeklyScheduler: React.FC<WeeklySchedulerProps> = ({ progress, them
             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-2">Remaining</p>
           </div>
           <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
-            <p className="text-2xl font-black text-blue-600 dark:text-blue-400">{phaseProgress.total}</p>
+            <p className="text-2xl font-black text-amber-600 dark:text-amber-400">{phaseProgress.total}</p>
             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-2">Phase Total</p>
           </div>
           <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4">
@@ -227,7 +227,7 @@ export const WeeklyScheduler: React.FC<WeeklySchedulerProps> = ({ progress, them
                     onClick={() => setHoursPerWeek(hours)}
                     className={`py-3 px-2 rounded-lg font-bold text-sm uppercase tracking-widest transition-all ${
                       hoursPerWeek === hours
-                        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/50'
+                        ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/30'
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                     }`}
                   >
@@ -262,7 +262,7 @@ export const WeeklyScheduler: React.FC<WeeklySchedulerProps> = ({ progress, them
 
           <button
             onClick={handleGenerateSchedule}
-            className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 rounded-xl uppercase tracking-widest transition-all shadow-lg text-lg"
+            className="w-full bg-gradient-to-r from-amber-500 to-amber-500 hover:from-amber-600 hover:to-amber-600 text-white font-bold py-4 rounded-xl uppercase tracking-widest transition-all shadow-lg text-lg"
           >
             <i className="fas fa-brain mr-2" />
             Generate Phase Schedule
@@ -285,7 +285,7 @@ export const WeeklyScheduler: React.FC<WeeklySchedulerProps> = ({ progress, them
                 {schedule.hasNextPhase && (
                   <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                     <p className="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase mb-2">Next Phase</p>
-                    <p className="text-xl font-black text-indigo-600 dark:text-indigo-400">
+                    <p className="text-xl font-black text-amber-600 dark:text-amber-400">
                       {ROADMAP_DATA[schedule.nextPhaseIndex].title}
                     </p>
                   </div>
@@ -347,12 +347,12 @@ export const WeeklyScheduler: React.FC<WeeklySchedulerProps> = ({ progress, them
                       >
                         <div className="flex items-center justify-between mb-4">
                           <h3 className="font-bold text-slate-800 dark:text-white flex items-center text-lg">
-                            <span className="w-8 h-8 rounded-full bg-indigo-600 text-white text-xs flex items-center justify-center font-black mr-3">
+                            <span className="w-8 h-8 rounded-full bg-amber-500 text-white text-xs flex items-center justify-center font-black mr-3">
                               {idx + 1}
                             </span>
                             {daySchedule.day}
                           </h3>
-                          <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1 rounded-lg">
+                          <span className="text-sm font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 px-3 py-1 rounded-lg">
                             {daySchedule.totalHours}h ({daySchedule.totalMinutes} min)
                           </span>
                         </div>
@@ -409,12 +409,12 @@ export const WeeklyScheduler: React.FC<WeeklySchedulerProps> = ({ progress, them
                 </div>
 
                 {/* Tips */}
-                <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-2xl p-6">
-                  <p className="text-sm font-bold text-indigo-700 dark:text-indigo-300 mb-3">
+                <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40 rounded-2xl p-6">
+                  <p className="text-sm font-bold text-amber-700 dark:text-amber-300 mb-3">
                     <i className="fas fa-lightbulb mr-2" />
                     Pro Tips:
                   </p>
-                  <ul className="text-sm text-indigo-600 dark:text-indigo-400 space-y-2 ml-6">
+                  <ul className="text-sm text-amber-600 dark:text-amber-400 space-y-2 ml-6">
                     <li>• This schedule covers only {currentPhase.title}</li>
                     <li>• Hard tasks are prioritized (scheduled first)</li>
                     <li>• Once phase complete, you'll unlock {schedule.nextPhaseIndex + 1 < ROADMAP_DATA.length ? ROADMAP_DATA[schedule.nextPhaseIndex].title : 'completion'}</li>

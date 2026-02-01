@@ -102,9 +102,9 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ theme, onSessionCo
           Study Timer
         </h3>
         <div className="flex items-center space-x-2">
-          <div className="flex items-center space-x-1 bg-indigo-50 dark:bg-indigo-900/20 px-3 py-1 rounded-full">
+          <div className="flex items-center space-x-1 bg-amber-50 dark:bg-amber-900/20 px-3 py-1 rounded-full">
             <i className="fas fa-check-circle text-indigo-500 text-xs" />
-            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">
+            <span className="text-xs font-bold text-amber-600 dark:text-amber-400">
               {sessions}
             </span>
           </div>
@@ -115,7 +115,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ theme, onSessionCo
       <div className="text-center mb-6">
         <span className={`inline-block px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider ${
           mode === 'work' 
-            ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' 
+            ? 'bg-indigo-100 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400' 
             : 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'
         }`}>
           {mode === 'work' ? '🎯 Focus Time' : '☕ Break Time'}
@@ -171,7 +171,7 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ theme, onSessionCo
             isRunning
               ? 'bg-amber-500 hover:bg-amber-600 text-white shadow-amber-500/20'
               : mode === 'work'
-              ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-500/20'
+              ? 'bg-amber-500 hover:bg-amber-600 text-white shadow-indigo-500/20'
               : 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-emerald-500/20'
           }`}
         >
@@ -206,11 +206,11 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ theme, onSessionCo
             {sessions}
           </p>
         </div>
-        <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-3">
+        <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-3">
           <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
             Time Studied
           </p>
-          <p className="text-xl font-black text-indigo-600 dark:text-indigo-400">
+          <p className="text-xl font-black text-amber-600 dark:text-amber-400">
             {Math.floor((sessions * 25) / 60)}h {(sessions * 25) % 60}m
           </p>
         </div>

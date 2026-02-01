@@ -45,7 +45,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
                 e.stopPropagation();
                 onOpenNotes(module.id, module.name);
               }}
-              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all"
+              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-indigo-400 transition-all"
               title="Add notes"
             >
               <i className="fas fa-sticky-note text-sm" />
@@ -75,7 +75,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
                   type="checkbox"
                   checked={progress.completedTodos.includes(todo.id)}
                   onChange={() => onToggleTodo(todo.id)}
-                  className="w-4 h-4 rounded text-indigo-600 border-slate-300 dark:border-slate-600 focus:ring-indigo-500 cursor-pointer"
+                  className="w-4 h-4 rounded text-amber-600 border-slate-300 dark:border-slate-600 focus:ring-indigo-500 cursor-pointer"
                 />
                 <span className={`text-sm transition-colors ${progress.completedTodos.includes(todo.id) ? 'line-through text-slate-400' : 'text-slate-700 dark:text-slate-300'}`}>
                   {todo.label}
@@ -94,7 +94,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
                       href={s.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline flex items-center"
+                      className="text-xs text-amber-600 dark:text-amber-400 hover:underline flex items-center"
                     >
                       <i className="fas fa-external-link-alt mr-1.5 opacity-70" />
                       {s.name}

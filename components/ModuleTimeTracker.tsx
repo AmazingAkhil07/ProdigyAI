@@ -58,7 +58,7 @@ export const ModuleTimeTracker: React.FC<ModuleTimeTrackerProps> = ({ progress, 
         {/* Overview Stats */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-            <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400">{totalTasks}</p>
+            <p className="text-3xl font-black text-amber-600 dark:text-amber-400">{totalTasks}</p>
             <p className="text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest mt-2">
               Tasks Completed
             </p>
@@ -97,7 +97,7 @@ export const ModuleTimeTracker: React.FC<ModuleTimeTrackerProps> = ({ progress, 
                         {module.moduleName}
                       </h3>
                       <div className="flex items-center space-x-4">
-                        <span className="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-900/30 px-3 py-1 rounded-lg text-sm font-bold text-indigo-600 dark:text-indigo-400">
+                        <span className="inline-flex items-center space-x-2 bg-amber-50 dark:bg-amber-900/20 px-3 py-1 rounded-lg text-sm font-bold text-amber-600 dark:text-amber-400">
                           <i className="fas fa-tasks" />
                           <span>{module.tasksCount} tasks</span>
                         </span>

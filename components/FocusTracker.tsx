@@ -120,7 +120,7 @@ export const FocusTracker: React.FC<FocusTrackerProps> = ({ progress, theme }) =
         {/* Main Timer Display */}
         <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-12 shadow-xl mb-8">
           <div className="text-center mb-8">
-            <div className="text-7xl font-black text-indigo-600 dark:text-indigo-400 tabular-nums mb-4">
+            <div className="text-7xl font-black text-amber-600 dark:text-amber-400 tabular-nums mb-4">
               {String(timerMinutes).padStart(2, '0')}:{String(displaySeconds).padStart(2, '0')}
             </div>
             <p className="text-sm font-bold uppercase tracking-widest text-slate-400">
@@ -133,7 +133,7 @@ export const FocusTracker: React.FC<FocusTrackerProps> = ({ progress, theme }) =
             {!isRunning ? (
               <button
                 onClick={handleStart}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-xl font-bold uppercase tracking-widest transition-all"
+                className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-xl font-bold uppercase tracking-widest transition-all"
               >
                 <i className="fas fa-play mr-2" />
                 Start
@@ -159,7 +159,7 @@ export const FocusTracker: React.FC<FocusTrackerProps> = ({ progress, theme }) =
           {/* Session Stats */}
           <div className="grid grid-cols-3 gap-4 pt-8 border-t border-slate-200 dark:border-slate-800">
             <div className="text-center">
-              <p className="text-2xl font-black text-indigo-600 dark:text-indigo-400">{sessions}</p>
+              <p className="text-2xl font-black text-amber-600 dark:text-amber-400">{sessions}</p>
               <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-2">Sessions</p>
             </div>
             <div className="text-center">
@@ -176,7 +176,7 @@ export const FocusTracker: React.FC<FocusTrackerProps> = ({ progress, theme }) =
         </div>
 
         {/* Tips */}
-        <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-2xl p-6">
+        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40 rounded-2xl p-6">
           <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center">
             <i className="fas fa-lightbulb text-indigo-500 mr-2" />
             Pomodoro Tips

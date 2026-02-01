@@ -30,13 +30,13 @@ export const ResourcesPanel: React.FC<ResourcesPanelProps> = ({ roadmapData, the
 
       <div className="space-y-3">
         {roadmapData.map((phase) => (
-          <div key={phase.id} className="border-l-4 border-indigo-500 pl-4">
+          <div key={phase.id} className="border-l-4 border-amber-500 pl-4">
             <button
               onClick={() => togglePhase(phase.id)}
               className="w-full text-left flex items-center justify-between group"
             >
               <div>
-                <h4 className="font-bold text-slate-800 dark:text-white text-sm group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                <h4 className="font-bold text-slate-800 dark:text-white text-sm group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                   {phase.title}
                 </h4>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -55,7 +55,7 @@ export const ResourcesPanel: React.FC<ResourcesPanelProps> = ({ roadmapData, the
                       className="w-full text-left flex items-center justify-between group"
                     >
                       <div className="flex-1">
-                        <p className="font-semibold text-slate-700 dark:text-slate-300 text-sm group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        <p className="font-semibold text-slate-700 dark:text-slate-300 text-sm group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                           {module.name}
                         </p>
                         <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -78,12 +78,12 @@ export const ResourcesPanel: React.FC<ResourcesPanelProps> = ({ roadmapData, the
                                 href={source.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-between p-2 bg-white dark:bg-slate-800 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all group border border-slate-200 dark:border-slate-700"
+                                className="flex items-center justify-between p-2 bg-white dark:bg-slate-800 rounded-lg hover:bg-amber-50 dark:hover:bg-indigo-900/20 transition-all group border border-slate-200 dark:border-slate-700"
                               >
-                                <span className="text-xs font-medium text-slate-700 dark:text-slate-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+                                <span className="text-xs font-medium text-slate-700 dark:text-slate-300 group-hover:text-amber-600 dark:group-hover:text-amber-400">
                                   {source.name}
                                 </span>
-                                <i className="fas fa-external-link-alt text-xs text-slate-400 group-hover:text-indigo-500" />
+                                <i className="fas fa-external-link-alt text-xs text-slate-400 group-hover:text-amber-500" />
                               </a>
                             ))}
                           </>

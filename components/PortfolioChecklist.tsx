@@ -20,7 +20,7 @@ export const PortfolioChecklist: React.FC<PortfolioChecklistProps> = ({ progress
           <i className="fas fa-briefcase mr-2 text-indigo-500" />
           Portfolio Readiness
         </h2>
-        <span className="text-xs font-semibold bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 px-2 py-1 rounded">
+        <span className="text-xs font-semibold bg-indigo-100 dark:bg-indigo-900 text-amber-600 dark:text-amber-400 px-2 py-1 rounded">
           {completedCount} / {totalCount} Done
         </span>
       </div>
@@ -36,7 +36,7 @@ export const PortfolioChecklist: React.FC<PortfolioChecklistProps> = ({ progress
                 type="checkbox"
                 checked={progress.portfolioItems.includes(item.id)}
                 onChange={() => onToggle(item.id)}
-                className="w-4 h-4 rounded text-indigo-600 border-slate-300 dark:border-slate-600 focus:ring-indigo-500 cursor-pointer"
+                className="w-4 h-4 rounded text-amber-600 border-slate-300 dark:border-slate-600 focus:ring-indigo-500 cursor-pointer"
               />
               <span className={`text-sm ${progress.portfolioItems.includes(item.id) ? 'text-slate-400 line-through' : 'text-slate-700 dark:text-slate-300'}`}>
                 {item.label}

@@ -37,10 +37,10 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ progress, them
         </div>
 
         {/* Progress Overview */}
-        <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/30 dark:to-indigo-900/20 rounded-3xl border border-indigo-200 dark:border-indigo-800 p-8 mb-12 shadow-lg">
+        <div className="bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-indigo-900/20 rounded-3xl border border-amber-200 dark:border-amber-800/40 p-8 mb-12 shadow-lg">
           <div className="grid grid-cols-3 gap-6 mb-8">
             <div className="text-center">
-              <p className="text-4xl font-black text-indigo-600 dark:text-indigo-400 mb-2">{portfolioStats.completed}</p>
+              <p className="text-4xl font-black text-amber-600 dark:text-amber-400 mb-2">{portfolioStats.completed}</p>
               <p className="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">Completed</p>
             </div>
             <div className="text-center">
@@ -55,7 +55,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ progress, them
 
           <div className="bg-white dark:bg-slate-800 rounded-2xl h-3 overflow-hidden">
             <div
-              className="bg-gradient-to-r from-indigo-500 to-purple-500 h-full transition-all duration-500"
+              className="bg-gradient-to-r from-amber-500 to-amber-500 h-full transition-all duration-500"
               style={{ width: `${portfolioStats.percentage}%` }}
             ></div>
           </div>
@@ -77,8 +77,8 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ progress, them
               {completedProjects.map((project, idx) => {
                 const originalIdx = PORTFOLIO_CHECKLIST.findIndex(p => p === project);
                 const badgeColors = [
-                  'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400',
-                  'bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
+                  'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400',
+                  'bg-purple-50 dark:bg-amber-900/20 text-purple-600 dark:text-purple-400',
                   'bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400',
                   'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400',
                   'bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400',
@@ -172,7 +172,7 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ progress, them
         </div>
 
         {/* Tips */}
-        <div className="mt-8 bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-2xl p-6">
+        <div className="mt-8 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40 rounded-2xl p-6">
           <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center">
             <i className="fas fa-lightbulb text-indigo-500 mr-2" />
             Portfolio Tips
