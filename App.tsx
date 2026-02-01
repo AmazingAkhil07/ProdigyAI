@@ -257,49 +257,49 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row bg-slate-50 dark:bg-slate-950 transition-colors">
+    <div className="min-h-screen flex flex-col md:flex-row bg-slate-50 dark:bg-black transition-colors">
       {/* Sidebar */}
-      <aside className="w-full md:w-64 bg-white dark:bg-slate-900 border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 p-6 flex flex-col fixed md:relative z-20 h-auto md:h-screen">
+      <aside className="w-full md:w-64 bg-white dark:bg-slate-900/50 border-b md:border-b-0 md:border-r border-slate-200 dark:border-amber-800/30 p-6 flex flex-col fixed md:relative z-20 h-auto md:h-screen">
         <div className="flex items-center space-x-3 mb-10">
-          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
+          <div className="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-amber-500/30">
             <i className="fas fa-brain text-lg" />
           </div>
           <div>
-            <h1 className="font-bold text-slate-800 dark:text-white tracking-tight leading-none">ProdigyAI</h1>
+            <h1 className="font-bold text-slate-800 dark:text-amber-300 tracking-tight leading-none">ProdigyAI</h1>
             <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest mt-1">Master & Build</p>
           </div>
         </div>
 
         {/* User Profile Card */}
-        <div className="mb-8 p-4 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/30 dark:to-indigo-900/20 rounded-2xl border border-indigo-200 dark:border-indigo-800">
+        <div className="mb-8 p-4 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-amber-900/20 dark:to-amber-900/10 rounded-2xl border border-amber-200 dark:border-amber-800/40">
           <div className="flex items-center space-x-3 mb-3">
-            <div className="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-white font-bold text-sm">
               {(auth.currentUser?.email?.charAt(0) || '?').toUpperCase()}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-bold text-slate-700 dark:text-slate-300 truncate">
+              <p className="text-xs font-bold text-slate-700 dark:text-amber-100 truncate">
                 {auth.currentUser?.email}
               </p>
-              <p className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-bold">ProdigyAI User</p>
+              <p className="text-[10px] text-slate-500 dark:text-amber-600/70 uppercase tracking-widest font-bold">ProdigyAI User</p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-2 pt-3 border-t border-indigo-200 dark:border-indigo-800">
+          <div className="grid grid-cols-3 gap-2 pt-3 border-t border-amber-200 dark:border-amber-800/40">
             <div className="text-center">
-              <p className="text-lg font-black text-indigo-600 dark:text-indigo-400">{progress.completedTodos.length}</p>
-              <p className="text-[9px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-tighter">Tasks</p>
+              <p className="text-lg font-black text-amber-600 dark:text-amber-400">{progress.completedTodos.length}</p>
+              <p className="text-[9px] font-bold text-slate-600 dark:text-amber-600/70 uppercase tracking-tighter">Tasks</p>
             </div>
             <div className="text-center">
               <p className="text-lg font-black text-orange-500 dark:text-orange-400">{progress.streak || 0}🔥</p>
-              <p className="text-[9px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-tighter">Streak</p>
+              <p className="text-[9px] font-bold text-slate-600 dark:text-amber-600/70 uppercase tracking-tighter">Streak</p>
             </div>
             <div className="text-center">
               <p className="text-lg font-black text-yellow-500 dark:text-yellow-400">{progress.badges?.length || 0}🏆</p>
-              <p className="text-[9px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-tighter">Badges</p>
+              <p className="text-[9px] font-bold text-slate-600 dark:text-amber-600/70 uppercase tracking-tighter">Badges</p>
             </div>
           </div>
           <button
             onClick={() => setActiveTab('profile')}
-            className="w-full mt-3 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold py-2 rounded-lg uppercase tracking-widest transition-all flex items-center justify-center"
+            className="w-full mt-3 bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold py-2 rounded-lg uppercase tracking-widest transition-all flex items-center justify-center"
           >
             <i className="fas fa-user-circle mr-2" />
             Public Profile
@@ -309,46 +309,46 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
         <nav className="space-y-1 flex-1">
           <button 
             onClick={() => setActiveTab('dashboard')}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'dashboard' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}`}
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'dashboard' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 font-semibold' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
           >
             <i className="fas fa-columns w-5" />
             <span>Dashboard</span>
           </button>
           <button 
             onClick={() => setActiveTab('roadmap')}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'roadmap' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}`}
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'roadmap' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 font-semibold' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
           >
             <i className="fas fa-map-marked-alt w-5" />
             <span>Roadmap</span>
           </button>
           <button 
             onClick={() => setActiveTab('resources')}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'resources' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}`}
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'resources' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 font-semibold' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
           >
             <i className="fas fa-book-open w-5" />
             <span>Resources</span>
           </button>
 
           {/* Advanced Features */}
-          <div className="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800">
+          <div className="pt-4 mt-4 border-t border-slate-200 dark:border-amber-800/30">
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400 px-4 mb-2">Tools</p>
             <button 
               onClick={() => setActiveTab('timer')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'timer' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}`}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'timer' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 font-semibold' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
             >
               <i className="fas fa-clock w-5" />
               <span>Focus Timer</span>
             </button>
             <button 
               onClick={() => setActiveTab('scheduler')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'scheduler' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}`}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'scheduler' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 font-semibold' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
             >
               <i className="fas fa-calendar-check w-5" />
               <span>Weekly Schedule</span>
             </button>
             <button 
               onClick={() => setActiveTab('leaderboard')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'leaderboard' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}`}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'leaderboard' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 font-semibold' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
             >
               <i className="fas fa-trophy w-5" />
               <span>Leaderboard</span>
@@ -356,10 +356,10 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
           </div>
         </nav>
 
-        <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800 space-y-4">
+        <div className="mt-auto pt-6 border-t border-slate-100 dark:border-amber-800/30 space-y-4">
           <button 
             onClick={toggleTheme}
-            className="w-full flex items-center justify-between px-4 py-2 text-sm text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all"
+            className="w-full flex items-center justify-between px-4 py-2 text-sm text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all"
           >
             <span className="flex items-center">
               <i className={`fas fa-${progress.theme === 'light' ? 'moon' : 'sun'} mr-3 w-5`} />
@@ -368,14 +368,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
           </button>
           <button 
             onClick={() => setActiveTab('notifications')}
-            className={`w-full flex items-center px-4 py-2 text-sm rounded-lg transition-all ${activeTab === 'notifications' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'}`}
+            className={`w-full flex items-center px-4 py-2 text-sm rounded-lg transition-all ${activeTab === 'notifications' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
           >
             <i className="fas fa-bell mr-3 w-5" />
             Notifications
           </button>
           <button 
             onClick={exportCSV}
-            className="w-full flex items-center px-4 py-2 text-sm text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all"
+            className="w-full flex items-center px-4 py-2 text-sm text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all"
           >
             <i className="fas fa-download mr-3 w-5" />
             Export CSV
@@ -394,10 +394,10 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
       <main className="flex-1 p-6 md:p-10 pt-24 md:pt-10 h-screen overflow-y-auto custom-scrollbar">
         <header className="flex flex-col md:flex-row md:items-center justify-between mb-8 space-y-4 md:space-y-0">
           <div>
-            <h2 className="text-2xl font-black text-slate-800 dark:text-white uppercase tracking-tight">
+            <h2 className="text-2xl font-black text-slate-800 dark:text-amber-300 uppercase tracking-tight">
               {activeTab === 'dashboard' ? 'Learning Dashboard' : activeTab === 'roadmap' ? 'Mastery Roadmap' : activeTab === 'resources' ? 'Learning Resources' : activeTab === 'profile' ? 'Public Profile' : activeTab === 'leaderboard' ? 'Leaderboard' : activeTab === 'scheduler' ? 'Weekly Schedule' : activeTab === 'timer' ? 'Focus Timer' : 'Notifications'}
             </h2>
-            <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
+            <p className="text-slate-500 dark:text-amber-600/70 text-sm font-medium">
               {activeTab === 'dashboard' ? 'Elevate your technical prowess.' : activeTab === 'roadmap' ? 'Elevate your technical prowess.' : activeTab === 'resources' ? 'Curated courses & certifications for every module' : activeTab === 'profile' ? 'Share your learning journey with the world' : activeTab === 'leaderboard' ? 'See where you stand in the community' : activeTab === 'scheduler' ? 'AI-powered personalized study schedule' : activeTab === 'timer' ? 'Track focused work sessions' : 'Manage your learning reminders'}
             </p>
           </div>
@@ -410,7 +410,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                 placeholder="Find a module..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:text-white transition-all shadow-sm"
+                className="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-amber-800/30 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 dark:text-amber-300 transition-all shadow-sm"
               />
             </div>
           )}
@@ -422,16 +422,16 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
             <div className="xl:col-span-2 space-y-8">
               {/* Highlight Area: Next Up / Resume */}
-              <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
-                <div className="absolute -top-10 -left-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl" />
+              <div className="bg-white dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-amber-800/30 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
+                <div className="absolute -top-10 -left-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl" />
                 <div className="relative z-10 flex-1">
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-500 bg-indigo-50 dark:bg-indigo-900/40 px-3 py-1 rounded-full">Next Milestone</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-600 bg-amber-50 dark:bg-indigo-900/40 px-3 py-1 rounded-full">Next Milestone</span>
                   {nextUp ? (
                     <>
-                      <h3 className="text-3xl font-black text-slate-800 dark:text-white mt-4 tracking-tight">
+                      <h3 className="text-3xl font-black text-slate-800 dark:text-amber-300 mt-4 tracking-tight">
                         {nextUp.todo.label}
                       </h3>
-                      <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm font-medium">
+                      <p className="text-slate-500 dark:text-amber-600/70 mt-2 text-sm font-medium">
                         Module: <span className="text-slate-700 dark:text-slate-200">{nextUp.mod.name}</span>
                       </p>
                       <button 
@@ -444,17 +444,17 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                     </>
                   ) : (
                     <>
-                      <h3 className="text-3xl font-black text-slate-800 dark:text-white mt-4 tracking-tight">
+                      <h3 className="text-3xl font-black text-slate-800 dark:text-amber-300 mt-4 tracking-tight">
                         All Caught Up!
                       </h3>
-                      <p className="text-slate-500 dark:text-slate-400 mt-2 text-sm">
+                      <p className="text-slate-500 dark:text-amber-600/70 mt-2 text-sm">
                         You've completed all tasks. Time to refine your portfolio!
                       </p>
                     </>
                   )}
                 </div>
-                <div className="relative z-10 hidden md:block w-48 h-48 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 p-6 flex flex-col justify-center items-center text-center">
-                   <div className="text-4xl font-black text-indigo-600 mb-2">{Math.round(overallProgress)}%</div>
+                <div className="relative z-10 hidden md:block w-48 h-48 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-amber-800/30 p-6 flex flex-col justify-center items-center text-center">
+                   <div className="text-4xl font-black text-amber-600 mb-2">{Math.round(overallProgress)}%</div>
                    <div className="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Total Progress</div>
                 </div>
               </div>
@@ -464,22 +464,22 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
 
               {/* Stats Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center space-x-4">
+                <div className="bg-white dark:bg-slate-900/50 p-5 rounded-2xl border border-slate-200 dark:border-amber-800/30 shadow-sm flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-500">
                     <i className="fas fa-tasks text-xl" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Completed</p>
-                    <p className="text-xl font-bold text-slate-800 dark:text-white">{progress.completedTodos.length} Tasks</p>
+                    <p className="text-xl font-bold text-slate-800 dark:text-amber-300">{progress.completedTodos.length} Tasks</p>
                   </div>
                 </div>
-                <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center space-x-4">
+                <div className="bg-white dark:bg-slate-900/50 p-5 rounded-2xl border border-slate-200 dark:border-amber-800/30 shadow-sm flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-500">
                     <i className="fas fa-certificate text-xl" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Portfolios</p>
-                    <p className="text-xl font-bold text-slate-800 dark:text-white">{progress.portfolioItems.length} Milestone{progress.portfolioItems.length !== 1 ? 's' : ''}</p>
+                    <p className="text-xl font-bold text-slate-800 dark:text-amber-300">{progress.portfolioItems.length} Milestone{progress.portfolioItems.length !== 1 ? 's' : ''}</p>
                   </div>
                 </div>
               </div>
@@ -494,9 +494,9 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {ROADMAP_DATA.map((phase) => (
-                    <div key={phase.id} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative group transition-all hover:shadow-md">
+                    <div key={phase.id} className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-amber-800/30 relative group transition-all hover:shadow-md">
                       <div className="relative z-10">
-                        <h4 className="font-bold text-slate-800 dark:text-white text-xs mb-1 truncate">{phase.title}</h4>
+                        <h4 className="font-bold text-slate-800 dark:text-amber-300 text-xs mb-1 truncate">{phase.title}</h4>
                         <ProgressBar 
                           progress={phaseProgress(phase.id)} 
                           colorClass={`bg-${phase.color}`} 
@@ -517,7 +517,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                     Achievements ({progress.badges?.length || 0}/{BADGES.length})
                   </h3>
                 </div>
-                <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                <div className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-amber-800/30">
                   <BadgesGrid badges={BADGES} earnedBadges={progress.badges || []} />
                 </div>
               </section>
@@ -540,7 +540,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                       href={tool.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-indigo-400 transition-all hover:translate-y-[-2px] group"
+                      className="bg-white dark:bg-slate-900/50 p-3 rounded-xl border border-slate-200 dark:border-amber-800/30 text-center hover:border-amber-400 transition-all hover:translate-y-[-2px] group"
                     >
                       <p className="text-[11px] font-bold text-slate-700 dark:text-slate-200 truncate">{tool.name}</p>
                       <p className="text-[9px] text-slate-400 uppercase tracking-tighter mt-1">{tool.category}</p>
@@ -565,21 +565,21 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
           <div className="space-y-12 pb-20">
             {filteredRoadmap.map((phase) => (
               <section key={phase.id} className="space-y-6">
-                <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-slate-100 dark:border-slate-800 pb-6 gap-4">
+                <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-slate-100 dark:border-amber-800/30 pb-6 gap-4">
                   <div className="max-w-xl">
                     <div className="flex items-center space-x-3 mb-2">
                       <span className={`text-[10px] font-black bg-${phase.color}/10 text-${phase.color} px-3 py-1 rounded-full uppercase tracking-widest`}>
                         {phase.duration}
                       </span>
-                      <h2 className="text-2xl font-black text-slate-800 dark:text-white uppercase tracking-tighter">
+                      <h2 className="text-2xl font-black text-slate-800 dark:text-amber-300 uppercase tracking-tighter">
                         {phase.title}
                       </h2>
                     </div>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed">
+                    <p className="text-slate-500 dark:text-amber-600/70 text-sm font-medium leading-relaxed">
                       {phase.goal}
                     </p>
                   </div>
-                  <div className="w-full md:w-72 bg-slate-100 dark:bg-slate-800/50 p-4 rounded-2xl">
+                  <div className="w-full md:w-72 bg-slate-100 dark:bg-slate-800/30 p-4 rounded-2xl">
                     <ProgressBar 
                       progress={phaseProgress(phase.id)} 
                       colorClass={`bg-${phase.color}`} 
@@ -605,14 +605,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
             ))}
 
             {filteredRoadmap.length === 0 && (
-              <div className="text-center py-24 bg-white dark:bg-slate-900 rounded-[2.5rem] border-2 border-dashed border-slate-200 dark:border-slate-800 flex flex-col items-center">
+              <div className="text-center py-24 bg-white dark:bg-slate-900/50 rounded-[2.5rem] border-2 border-dashed border-slate-200 dark:border-amber-800/30 flex flex-col items-center">
                 <div className="w-16 h-16 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-slate-300 mb-6">
                   <i className="fas fa-search text-2xl" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-600 dark:text-slate-400">No modules found matching "{searchQuery}"</h3>
+                <h3 className="text-xl font-bold text-slate-600 dark:text-amber-600/70">No modules found matching "{searchQuery}"</h3>
                 <button 
                   onClick={() => setSearchQuery('')}
-                  className="mt-6 text-indigo-600 dark:text-indigo-400 font-bold uppercase text-xs tracking-widest hover:underline"
+                  className="mt-6 text-amber-600 dark:text-amber-400 font-bold uppercase text-xs tracking-widest hover:underline"
                 >
                   Clear search filters
                 </button>
@@ -627,14 +627,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
           <FocusTracker progress={progress} theme={progress.theme} />
         ) : activeTab === 'profile' ? (
           <div className="max-w-4xl">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-lg">
-              <h2 className="text-2xl font-black text-slate-800 dark:text-white mb-4">Your Public Profile</h2>
-              <p className="text-slate-600 dark:text-slate-400 mb-6">Share your learning journey with employers and the community</p>
+            <div className="bg-white dark:bg-slate-900/50 rounded-3xl border border-slate-200 dark:border-amber-800/30 p-8 shadow-lg">
+              <h2 className="text-2xl font-black text-slate-800 dark:text-amber-300 mb-4">Your Public Profile</h2>
+              <p className="text-slate-600 dark:text-amber-600/70 mb-6">Share your learning journey with employers and the community</p>
               
               <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl p-6 border border-indigo-200 dark:border-indigo-800">
+                <div className="bg-amber-50 dark:bg-indigo-900/20 rounded-2xl p-6 border border-amber-200 dark:border-amber-800/40">
                   <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">Profile URL</p>
-                  <p className="text-sm text-slate-700 dark:text-slate-300 font-mono bg-white dark:bg-slate-800 p-3 rounded-lg break-all">prodigyai.dev/user/{auth.currentUser?.uid?.slice(0, 8)}</p>
+                  <p className="text-sm text-slate-700 dark:text-amber-100 font-mono bg-white dark:bg-slate-800 p-3 rounded-lg break-all">prodigyai.dev/user/{auth.currentUser?.uid?.slice(0, 8)}</p>
                 </div>
                 <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl p-6 border border-emerald-200 dark:border-emerald-800">
                   <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">Share</p>
@@ -654,18 +654,18 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                 </div>
               </div>
 
-              <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6">
-                <h3 className="font-bold text-slate-800 dark:text-white mb-4">Your Achievements</h3>
+              <div className="bg-slate-50 dark:bg-slate-800/30 rounded-2xl p-6">
+                <h3 className="font-bold text-slate-800 dark:text-amber-300 mb-4">Your Achievements</h3>
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center bg-white dark:bg-slate-900 p-4 rounded-xl">
-                    <p className="text-2xl font-black text-indigo-600 dark:text-indigo-400">{progress.completedTodos.length}</p>
+                  <div className="text-center bg-white dark:bg-slate-900/50 p-4 rounded-xl">
+                    <p className="text-2xl font-black text-amber-600 dark:text-amber-400">{progress.completedTodos.length}</p>
                     <p className="text-xs font-bold text-slate-400 uppercase mt-2">Tasks</p>
                   </div>
-                  <div className="text-center bg-white dark:bg-slate-900 p-4 rounded-xl">
+                  <div className="text-center bg-white dark:bg-slate-900/50 p-4 rounded-xl">
                     <p className="text-2xl font-black text-orange-500 dark:text-orange-400">{progress.streak}🔥</p>
                     <p className="text-xs font-bold text-slate-400 uppercase mt-2">Streak</p>
                   </div>
-                  <div className="text-center bg-white dark:bg-slate-900 p-4 rounded-xl">
+                  <div className="text-center bg-white dark:bg-slate-900/50 p-4 rounded-xl">
                     <p className="text-2xl font-black text-yellow-500 dark:text-yellow-400">{progress.badges?.length || 0}</p>
                     <p className="text-xs font-bold text-slate-400 uppercase mt-2">Badges</p>
                   </div>
@@ -679,15 +679,15 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
           <WeeklyScheduler progress={progress} theme={progress.theme} />
         ) : activeTab === 'notifications' ? (
           <div className="max-w-4xl">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 shadow-lg">
-              <h2 className="text-2xl font-black text-slate-800 dark:text-white mb-2">Notification Settings</h2>
-              <p className="text-slate-600 dark:text-slate-400 mb-6">Stay motivated with timely reminders</p>
+            <div className="bg-white dark:bg-slate-900/50 rounded-3xl border border-slate-200 dark:border-amber-800/30 p-8 shadow-lg">
+              <h2 className="text-2xl font-black text-slate-800 dark:text-amber-300 mb-2">Notification Settings</h2>
+              <p className="text-slate-600 dark:text-amber-600/70 mb-6">Stay motivated with timely reminders</p>
               
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/30 rounded-xl border border-slate-200 dark:border-amber-800/30">
                   <div>
-                    <p className="font-bold text-slate-800 dark:text-white">Task Reminders</p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Get reminded to complete daily tasks</p>
+                    <p className="font-bold text-slate-800 dark:text-amber-300">Task Reminders</p>
+                    <p className="text-sm text-slate-600 dark:text-amber-600/70">Get reminded to complete daily tasks</p>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input 
@@ -696,14 +696,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                       onChange={(e) => setNotificationsEnabled({...notificationsEnabled, taskReminders: e.target.checked})}
                       className="sr-only peer" 
                     />
-                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
                   </label>
                 </div>
 
-                <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/30 rounded-xl border border-slate-200 dark:border-amber-800/30">
                   <div>
-                    <p className="font-bold text-slate-800 dark:text-white">Streak Alerts</p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Notified before losing your streak</p>
+                    <p className="font-bold text-slate-800 dark:text-amber-300">Streak Alerts</p>
+                    <p className="text-sm text-slate-600 dark:text-amber-600/70">Notified before losing your streak</p>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input 
@@ -712,14 +712,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                       onChange={(e) => setNotificationsEnabled({...notificationsEnabled, streakAlerts: e.target.checked})}
                       className="sr-only peer" 
                     />
-                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
                   </label>
                 </div>
 
-                <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/30 rounded-xl border border-slate-200 dark:border-amber-800/30">
                   <div>
-                    <p className="font-bold text-slate-800 dark:text-white">New Badges</p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Celebrate when you unlock achievements</p>
+                    <p className="font-bold text-slate-800 dark:text-amber-300">New Badges</p>
+                    <p className="text-sm text-slate-600 dark:text-amber-600/70">Celebrate when you unlock achievements</p>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input 
@@ -728,14 +728,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                       onChange={(e) => setNotificationsEnabled({...notificationsEnabled, badgeNotifications: e.target.checked})}
                       className="sr-only peer" 
                     />
-                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
                   </label>
                 </div>
 
-                <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
+                <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/30 rounded-xl border border-slate-200 dark:border-amber-800/30">
                   <div>
-                    <p className="font-bold text-slate-800 dark:text-white">Browser Notifications</p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Enable desktop notifications</p>
+                    <p className="font-bold text-slate-800 dark:text-amber-300">Browser Notifications</p>
+                    <p className="text-sm text-slate-600 dark:text-amber-600/70">Enable desktop notifications</p>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input 
@@ -759,7 +759,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                       }}
                       className="sr-only peer" 
                     />
-                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-indigo-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                    <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
                   </label>
                 </div>
               </div>
