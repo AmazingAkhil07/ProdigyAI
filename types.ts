@@ -1,7 +1,16 @@
 
+export interface Note {
+  id: string;
+  moduleId: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface TodoItem {
   id: string;
   label: string;
+  difficulty?: 'easy' | 'medium' | 'hard'; // in minutes: easy=15, medium=45, hard=120
 }
 
 export interface Resource {
@@ -37,6 +46,11 @@ export interface UserProgress {
   portfolioItems: string[]; // List of checklist IDs
   theme: 'light' | 'dark';
   chatHistory: Message[];
+  badges: string[]; // List of earned badge IDs
+  streak: number; // Current daily streak
+  lastLoginDate: string; // ISO date string
+  taskHistory: { date: string; tasks: { id: string; label: string; moduleId?: string }[] }[]; // Daily task completion history with task details
+  notes: Note[]; // User notes for modules
 }
 
 export interface PortfolioItem {

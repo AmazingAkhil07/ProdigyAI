@@ -1,6 +1,6 @@
 {
-  "name": "AI Tech Mastery Roadmap",
-  "description": "A professional, interactive dashboard for tracking a multi-phase AI learning journey from power user to tech guru.",
+  "name": "ProdigyAI",
+  "description": "Master AI: From power user to tech guru. Build agents, MVPs, and lead AI adoption with ProdigyAI.",
   "requestFramePermissions": [
     "microphone"
   ]

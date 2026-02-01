@@ -25,7 +25,7 @@ export const PortfolioChecklist: React.FC<PortfolioChecklistProps> = ({ progress
         </span>
       </div>
 
-      <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-2">
+      <div className="space-y-2 max-h-96 overflow-y-auto custom-scrollbar pr-2">
         {PORTFOLIO_CHECKLIST.map((item) => (
           <label 
             key={item.id}

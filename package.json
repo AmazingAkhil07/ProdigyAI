@@ -1,5 +1,5 @@
 {
-  "name": "ai-tech-mastery-roadmap",
+  "name": "prodigy-ai",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,9 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^1.39.0",
+    "@types/react-calendar": "^3.9.0",
+    "firebase": "^12.8.0",
     "react": "^19.2.4",
+    "react-calendar": "^6.0.0",
     "react-dom": "^19.2.4",
-    "@google/genai": "^1.39.0"
+    "react-firebase-hooks": "^5.1.1",
+    "recharts": "^3.7.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

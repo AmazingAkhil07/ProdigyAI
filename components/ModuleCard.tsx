@@ -7,13 +7,15 @@ interface ModuleCardProps {
   progress: UserProgress;
   onToggleTodo: (todoId: string) => void;
   colorClass: string;
+  onOpenNotes?: (moduleId: string, moduleName: string) => void;
 }
 
 export const ModuleCard: React.FC<ModuleCardProps> = ({ 
   module, 
   progress, 
   onToggleTodo,
-  colorClass 
+  colorClass,
+  onOpenNotes
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -37,6 +39,18 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
           <h3 className="font-semibold text-slate-800 dark:text-slate-100">{module.name}</h3>
         </div>
         <div className="flex items-center space-x-3">
+          {onOpenNotes && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenNotes(module.id, module.name);
+              }}
+              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-indigo-100 dark:hover:bg-indigo-900/30 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all"
+              title="Add notes"
+            >
+              <i className="fas fa-sticky-note text-sm" />
+            </button>
+          )}
           <span className="text-xs font-medium text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">
             {completedCount}/{totalCount}
           </span>

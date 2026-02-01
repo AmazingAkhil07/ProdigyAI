@@ -21,6 +21,47 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ currentPhase, progress
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Format AI response text for better readability
+  const formatMessage = (text: string) => {
+    return text
+      // Remove markdown headers (####, ###, ##, #)
+      .replace(/#{1,6}\s+/g, '')
+      // Remove bold markers but keep the text
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      // Convert numbered lists to bullet points
+      .replace(/^\s*(\d+)\.\s+/gm, '• ')
+      // Convert dashes to bullet points
+      .replace(/^\s*[-*]\s+/gm, '• ')
+      // Add spacing after bullet points
+      .replace(/•\s+/g, '• ')
+      // Add double line breaks after periods (for paragraphs)
+      .replace(/\.\s+(?=[A-Z])/g, '.\n\n')
+      // Add line breaks before bullet points
+      .replace(/•/g, '\n• ')
+      // Clean up multiple newlines
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  };
+
+  const renderFormattedText = (text: string) => {
+    const formatted = formatMessage(text);
+    return formatted.split('\n').map((line, idx) => {
+      const isBullet = line.trim().startsWith('•');
+      return (
+        <div key={idx} className={isBullet ? 'ml-2 my-1' : 'my-2'}>
+          {line.trim().startsWith('•') ? (
+            <span className="flex items-start space-x-2">
+              <span className="text-indigo-500 font-bold mt-0.5">•</span>
+              <span className="flex-1">{line.replace('•', '').trim()}</span>
+            </span>
+          ) : line ? (
+            <span>{line}</span>
+          ) : null}
+        </div>
+      );
+    });
+  };
+
   useEffect(() => {
     if (isChatOpen) scrollToBottom();
   }, [progress.chatHistory, isChatOpen]);
@@ -113,12 +154,18 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ currentPhase, progress
             )}
             {progress.chatHistory.map((msg, i) => (
               <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-2xl text-sm ${
+                <div className={`max-w-[85%] p-4 rounded-2xl text-sm ${
                   msg.role === 'user' 
                     ? 'bg-indigo-600 text-white rounded-tr-none' 
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-tl-none'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded-tl-none shadow-sm'
                 }`}>
-                  {msg.text}
+                  {msg.role === 'model' ? (
+                    <div className="space-y-1 leading-relaxed">
+                      {renderFormattedText(msg.text)}
+                    </div>
+                  ) : (
+                    <div className="leading-relaxed">{msg.text}</div>
+                  )}
                 </div>
               </div>
             ))}
