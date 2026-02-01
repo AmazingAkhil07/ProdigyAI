@@ -107,7 +107,7 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ currentPhase, progress
   return (
     <div className="flex flex-col space-y-4">
       {/* Advice Header Card */}
-      <div className="bg-gradient-to-br from-amber-500 to-violet-700 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 p-4 opacity-10">
           <i className="fas fa-rocket text-7xl rotate-12" />
         </div>

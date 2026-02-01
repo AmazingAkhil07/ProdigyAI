@@ -12,14 +12,14 @@ export const BadgeDisplay: React.FC<BadgeDisplayProps> = ({ icon, name, descript
   const rarityColors = {
     common: 'from-gray-400 to-gray-500',
     rare: 'from-blue-400 to-blue-600',
-    epic: 'from-purple-400 to-amber-500',
+    epic: 'from-amber-400 to-amber-500',
     legendary: 'from-yellow-400 to-yellow-600'
   };
 
   const rarityBorders = {
     common: 'border-gray-400',
     rare: 'border-blue-400',
-    epic: 'border-purple-400',
+    epic: 'border-amber-400',
     legendary: 'border-yellow-400'
   };
 

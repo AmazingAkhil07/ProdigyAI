@@ -78,8 +78,8 @@ export const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({ progress, them
                 const originalIdx = PORTFOLIO_CHECKLIST.findIndex(p => p === project);
                 const badgeColors = [
                   'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400',
-                  'bg-purple-50 dark:bg-amber-900/20 text-purple-600 dark:text-purple-400',
-                  'bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400',
+                  'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400',
+                  'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400',
                   'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400',
                   'bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400',
                   'bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400',

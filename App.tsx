@@ -422,7 +422,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
             <div className="xl:col-span-2 space-y-8">
               {/* Highlight Area: Next Up / Resume */}
-              <div className="bg-white dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-amber-800/30 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
+              <div className="bg-white dark:bg-slate-900/50 rounded-3xl p-8 border border-slate-200 dark:border-amber-800/30 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between animate-fadeInUp card-hover">
                 <div className="absolute -top-10 -left-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl" />
                 <div className="relative z-10 flex-1">
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-600 bg-amber-50 dark:bg-indigo-900/40 px-3 py-1 rounded-full">Next Milestone</span>
@@ -436,7 +436,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                       </p>
                       <button 
                         onClick={() => setActiveTab('roadmap')}
-                        className="mt-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center space-x-3"
+                        className="mt-6 bg-slate-900 dark:bg-amber-500 text-white dark:text-black px-8 py-3 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center space-x-3 btn-premium"
                       >
                         <span>Resume Journey</span>
                         <i className="fas fa-arrow-right text-xs" />
@@ -463,8 +463,8 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
               <LearningOutcomes theme={progress.theme} />
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-white dark:bg-slate-900/50 p-5 rounded-2xl border border-slate-200 dark:border-amber-800/30 shadow-sm flex items-center space-x-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 animate-fadeInUp" style={{animationDelay: '0.1s'}}>
+                <div className="bg-white dark:bg-slate-900/50 p-5 rounded-2xl border border-slate-200 dark:border-amber-800/30 shadow-sm flex items-center space-x-4 card-hover stagger-item">
                   <div className="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-500">
                     <i className="fas fa-tasks text-xl" />
                   </div>
@@ -473,7 +473,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
                     <p className="text-xl font-bold text-slate-800 dark:text-amber-300">{progress.completedTodos.length} Tasks</p>
                   </div>
                 </div>
-                <div className="bg-white dark:bg-slate-900/50 p-5 rounded-2xl border border-slate-200 dark:border-amber-800/30 shadow-sm flex items-center space-x-4">
+                <div className="bg-white dark:bg-slate-900/50 p-5 rounded-2xl border border-slate-200 dark:border-amber-800/30 shadow-sm flex items-center space-x-4 card-hover stagger-item" style={{animationDelay: '0.15s'}}>
                   <div className="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-500">
                     <i className="fas fa-certificate text-xl" />
                   </div>
@@ -510,14 +510,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
               </section>
 
               {/* Achievements & Badges */}
-              <section>
+              <section className="animate-fadeInUp" style={{animationDelay: '0.2s'}}>
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 flex items-center">
                     <i className="fas fa-trophy mr-2" />
                     Achievements ({progress.badges?.length || 0}/{BADGES.length})
                   </h3>
                 </div>
-                <div className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-amber-800/30">
+                <div className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-amber-800/30 card-hover">
                   <BadgesGrid badges={BADGES} earnedBadges={progress.badges || []} />
                 </div>
               </section>
