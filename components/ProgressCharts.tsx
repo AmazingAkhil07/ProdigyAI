@@ -45,7 +45,7 @@ export const ProgressCharts: React.FC<ProgressChartsProps> = ({ taskHistory, the
   }, [totalTasksInPeriod, chartData]);
 
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+    <div className="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-amber-800/30 p-6 shadow-lg card-hover animate-fadeInUp">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 flex items-center">
@@ -118,14 +118,14 @@ export const ProgressCharts: React.FC<ProgressChartsProps> = ({ taskHistory, the
               fontWeight: 'bold'
             }}
             labelStyle={{ color: theme === 'dark' ? '#e2e8f0' : '#1e293b' }}
-            itemStyle={{ color: '#6366f1' }}
+            itemStyle={{ color: '#f59e0b' }}
           />
           <Line
             type="monotone"
             dataKey="count"
-            stroke="#6366f1"
+            stroke="#f59e0b"
             strokeWidth={3}
-            dot={{ fill: '#6366f1', r: 4 }}
+            dot={{ fill: '#f59e0b', r: 4 }}
             activeDot={{ r: 6 }}
           />
         </LineChart>

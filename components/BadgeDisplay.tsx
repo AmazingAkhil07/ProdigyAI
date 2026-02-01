@@ -11,7 +11,7 @@ interface BadgeDisplayProps {
 export const BadgeDisplay: React.FC<BadgeDisplayProps> = ({ icon, name, description, rarity, earned }) => {
   const rarityColors = {
     common: 'from-gray-400 to-gray-500',
-    rare: 'from-blue-400 to-blue-600',
+    rare: 'from-amber-400 to-amber-600',
     epic: 'from-amber-400 to-amber-500',
     legendary: 'from-yellow-400 to-yellow-600'
   };

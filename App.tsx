@@ -674,7 +674,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
             </div>
           </div>
         ) : activeTab === 'leaderboard' ? (
-          <Leaderboard progress={progress} theme={progress.theme} />
+          <Leaderboard progress={progress} theme={progress.theme} onProgressUpdate={setProgress} />
         ) : activeTab === 'scheduler' ? (
           <WeeklyScheduler progress={progress} theme={progress.theme} />
         ) : activeTab === 'notifications' ? (

@@ -54,7 +54,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+    <div className="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-amber-800/30 p-6 card-hover">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 flex items-center">
           <i className="fas fa-calendar-alt mr-2" />
