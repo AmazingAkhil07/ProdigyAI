@@ -1,0 +1,7 @@
+{
+  "name": "AI Tech Mastery Roadmap",
+  "description": "A professional, interactive dashboard for tracking a multi-phase AI learning journey from power user to tech guru.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
