@@ -20,10 +20,9 @@ import { PomodoroTimer } from './components/PomodoroTimer';
 import { LearningOutcomes } from './components/LearningOutcomes';
 import { FocusTracker } from './components/FocusTracker';
 import { WeeklyScheduler } from './components/WeeklyScheduler';
-import { Leaderboard } from './components/Leaderboard';
 
 const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgress) => void }> = ({ progress, setProgress }) => {
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'roadmap' | 'resources' | 'profile' | 'leaderboard' | 'scheduler' | 'timer' | 'notifications'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'roadmap' | 'resources' | 'profile' | 'scheduler' | 'timer' | 'notifications'>('dashboard');
   const [searchQuery, setSearchQuery] = useState('');
   const [notesModalOpen, setNotesModalOpen] = useState(false);
   const [selectedModuleId, setSelectedModuleId] = useState<string>('');
@@ -346,13 +345,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
               <i className="fas fa-calendar-check w-5" />
               <span>Weekly Schedule</span>
             </button>
-            <button 
-              onClick={() => setActiveTab('leaderboard')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${activeTab === 'leaderboard' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 font-semibold' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
-            >
-              <i className="fas fa-trophy w-5" />
-              <span>Leaderboard</span>
-            </button>
+
           </div>
         </nav>
 
@@ -395,10 +388,10 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
         <header className="flex flex-col md:flex-row md:items-center justify-between mb-8 space-y-4 md:space-y-0">
           <div>
             <h2 className="text-2xl font-black text-slate-800 dark:text-amber-300 uppercase tracking-tight">
-              {activeTab === 'dashboard' ? 'Learning Dashboard' : activeTab === 'roadmap' ? 'Mastery Roadmap' : activeTab === 'resources' ? 'Learning Resources' : activeTab === 'profile' ? 'Public Profile' : activeTab === 'leaderboard' ? 'Leaderboard' : activeTab === 'scheduler' ? 'Weekly Schedule' : activeTab === 'timer' ? 'Focus Timer' : 'Notifications'}
+              {activeTab === 'dashboard' ? 'Learning Dashboard' : activeTab === 'roadmap' ? 'Mastery Roadmap' : activeTab === 'resources' ? 'Learning Resources' : activeTab === 'profile' ? 'Public Profile' : activeTab === 'scheduler' ? 'Weekly Schedule' : activeTab === 'timer' ? 'Focus Timer' : 'Notifications'}
             </h2>
             <p className="text-slate-500 dark:text-amber-600/70 text-sm font-medium">
-              {activeTab === 'dashboard' ? 'Elevate your technical prowess.' : activeTab === 'roadmap' ? 'Elevate your technical prowess.' : activeTab === 'resources' ? 'Curated courses & certifications for every module' : activeTab === 'profile' ? 'Share your learning journey with the world' : activeTab === 'leaderboard' ? 'See where you stand in the community' : activeTab === 'scheduler' ? 'AI-powered personalized study schedule' : activeTab === 'timer' ? 'Track focused work sessions' : 'Manage your learning reminders'}
+              {activeTab === 'dashboard' ? 'Elevate your technical prowess.' : activeTab === 'roadmap' ? 'Elevate your technical prowess.' : activeTab === 'resources' ? 'Curated courses & certifications for every module' : activeTab === 'profile' ? 'Share your learning journey with the world' : activeTab === 'scheduler' ? 'AI-powered personalized study schedule' : activeTab === 'timer' ? 'Track focused work sessions' : 'Manage your learning reminders'}
             </p>
           </div>
 
@@ -673,8 +666,6 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
               </div>
             </div>
           </div>
-        ) : activeTab === 'leaderboard' ? (
-          <Leaderboard progress={progress} theme={progress.theme} onProgressUpdate={setProgress} />
         ) : activeTab === 'scheduler' ? (
           <WeeklyScheduler progress={progress} theme={progress.theme} />
         ) : activeTab === 'notifications' ? (

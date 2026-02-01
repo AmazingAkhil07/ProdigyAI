@@ -51,7 +51,6 @@ export interface UserProgress {
   lastLoginDate: string; // ISO date string
   taskHistory: { date: string; tasks: { id: string; label: string; moduleId?: string }[] }[]; // Daily task completion history with task details
   notes: Note[]; // User notes for modules
-  leaderboardOptIn?: boolean; // Whether user opted in to leaderboard
 }
 
 export interface PortfolioItem {
