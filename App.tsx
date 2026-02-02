@@ -418,6 +418,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
               <i className="fas fa-sign-out-alt text-sm" />
             </button>
           </div>
+        </header>
 
         {activeTab === 'dashboard' ? (
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
