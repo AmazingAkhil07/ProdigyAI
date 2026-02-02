@@ -359,27 +359,6 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
               {progress.theme === 'light' ? 'Dark' : 'Light'} Mode
             </span>
           </button>
-          <button 
-            onClick={() => setActiveTab('notifications')}
-            className={`w-full flex items-center px-4 py-2 text-sm rounded-lg transition-all ${activeTab === 'notifications' ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400' : 'text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
-          >
-            <i className="fas fa-bell mr-3 w-5" />
-            Notifications
-          </button>
-          <button 
-            onClick={exportCSV}
-            className="w-full flex items-center px-4 py-2 text-sm text-slate-500 dark:text-amber-600/70 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-all"
-          >
-            <i className="fas fa-download mr-3 w-5" />
-            Export CSV
-          </button>
-          <button 
-            onClick={() => auth.signOut()}
-            className="w-full flex items-center px-4 py-2 text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-all"
-          >
-            <i className="fas fa-sign-out-alt mr-3 w-5" />
-            Logout
-          </button>
         </div>
       </aside>
 
@@ -408,8 +387,37 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
             </div>
           )}
 
-
-        </header>
+          {/* Top Bar Actions */}
+          <div className="flex items-center space-x-3">
+            <button 
+              onClick={() => setActiveTab('notifications')}
+              className={`flex items-center justify-center w-10 h-10 rounded-lg transition-all ${activeTab === 'notifications' ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400' : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-amber-600/70'}`}
+              title="Notifications"
+            >
+              <i className="fas fa-bell text-sm" />
+            </button>
+            <button 
+              onClick={toggleTheme}
+              className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-amber-600/70 transition-all"
+              title="Toggle Theme"
+            >
+              <i className={`fas fa-${progress.theme === 'light' ? 'moon' : 'sun'} text-sm`} />
+            </button>
+            <button 
+              onClick={exportCSV}
+              className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-amber-600/70 transition-all"
+              title="Export CSV"
+            >
+              <i className="fas fa-download text-sm" />
+            </button>
+            <button 
+              onClick={() => auth.signOut()}
+              className="flex items-center justify-center w-10 h-10 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/20 text-red-500 transition-all"
+              title="Logout"
+            >
+              <i className="fas fa-sign-out-alt text-sm" />
+            </button>
+          </div>
 
         {activeTab === 'dashboard' ? (
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
