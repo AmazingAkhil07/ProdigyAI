@@ -43,15 +43,19 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
 
   // Calculate and update streak
   useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
+    // Get today's date in India timezone (IST: UTC+5:30)
+    const indiaTime = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    const today = indiaTime.toISOString().split('T')[0];
     const lastLogin = progress.lastLoginDate || '';
     
     if (lastLogin !== today) {
-      const yesterday = new Date();
+      const yesterday = new Date(indiaTime);
       yesterday.setDate(yesterday.getDate() - 1);
       const yesterdayStr = yesterday.toISOString().split('T')[0];
       
       const newStreak = lastLogin === yesterdayStr ? progress.streak + 1 : 1;
+      
+      console.log('Streak Update - Today:', today, 'Last Login:', lastLogin, 'Yesterday:', yesterdayStr, 'New Streak:', newStreak);
       
       setProgress({
         ...progress,
