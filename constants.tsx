@@ -25,7 +25,7 @@ export const ROADMAP_DATA: Phase[] = [
         ],
         suggestedCertifications: [
           { name: 'DeepLearning.AI - Free Certificate', url: 'https://learn.deeplearning.ai/courses/chatgpt-prompt-eng' },
-          { name: 'freeCodeCamp - AI Free Certificate', url: 'https://www.freecodecamp.org/learn' }
+          { name: 'freeCodeCamp - Machine Learning with Python', url: 'https://www.freecodecamp.org/learn/machine-learning-with-python/' }
         ]
       },
       {
