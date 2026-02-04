@@ -24,8 +24,8 @@ export const ROADMAP_DATA: Phase[] = [
           { id: 'p1m1-4', label: 'Create reusable prompt templates' }
         ],
         suggestedCertifications: [
-          { name: 'DeepLearning.AI Certificate', url: '#' },
-          { name: 'OpenAI Free Certificate', url: '#' }
+          { name: 'DeepLearning.AI - Free Certificate', url: 'https://learn.deeplearning.ai/courses/chatgpt-prompt-eng' },
+          { name: 'freeCodeCamp - AI Free Certificate', url: 'https://www.freecodecamp.org/learn' }
         ]
       },
       {
@@ -44,7 +44,8 @@ export const ROADMAP_DATA: Phase[] = [
           { id: 'p1m2-5', label: 'Run small fine-tune' }
         ],
         suggestedCertifications: [
-          { name: 'HuggingFace Transformers Certificate', url: '#' }
+          { name: 'DeepLearning.AI - Free Certificate', url: 'https://learn.deeplearning.ai/courses/generative-ai-for-everyone' },
+          { name: 'HuggingFace - LLM Course Free', url: 'https://huggingface.co/learn/llm-course' }
         ]
       },
       {
@@ -52,8 +53,8 @@ export const ROADMAP_DATA: Phase[] = [
         name: 'Research Using AI',
         description: 'Automate literature review, deep research, summarization, report writing.',
         learningSources: [
-          { name: 'Perplexity', url: 'https://www.perplexity.ai/' },
-          { name: 'NotebookLM', url: 'https://notebooklm.google.com/' }
+          { name: 'Perplexity AI', url: 'https://www.perplexity.ai' },
+          { name: 'Google NotebookLM', url: 'https://notebooklm.google.com' }
         ],
         todos: [
           { id: 'p1m3-1', label: '3 research reports' },
@@ -62,7 +63,8 @@ export const ROADMAP_DATA: Phase[] = [
           { id: 'p1m3-4', label: 'Future of jobs report' }
         ],
         suggestedCertifications: [
-          { name: 'Elicit Research Certificate', url: '#' }
+          { name: 'DeepLearning.AI - RAG Course Free', url: 'https://learn.deeplearning.ai/courses/retrieval-augmented-generation-rag' },
+          { name: 'freeCodeCamp - Python Certificate', url: 'https://www.freecodecamp.org/learn/python-v9' }
         ]
       }
       // Simplified for space; in a real app, all modules from the prompt would be added here.
@@ -90,7 +92,8 @@ export const ROADMAP_DATA: Phase[] = [
           { id: 'p2m1-4', label: 'Test agent multi-step execution' }
         ],
         suggestedCertifications: [
-          { name: 'n8n Advanced Workflow certificate', url: '#' }
+          { name: 'DeepLearning.AI - Agentic AI Free', url: 'https://learn.deeplearning.ai/courses/agentic-ai' },
+          { name: 'HuggingFace - Agents Course Free', url: 'https://huggingface.co/learn/agents-course' }
         ]
       },
       {
@@ -98,8 +101,8 @@ export const ROADMAP_DATA: Phase[] = [
         name: 'MVP Deployment',
         description: 'Deploy full working MVP online',
         learningSources: [
-          { name: 'Vercel', url: 'https://vercel.com/' },
-          { name: 'Replit AI', url: 'https://replit.com/ai' }
+          { name: 'Vercel Deployment Docs', url: 'https://vercel.com/docs' },
+          { name: 'Replit Deployment Guide', url: 'https://docs.replit.com/hosting/deploying-http-servers' }
         ],
         todos: [
           { id: 'p2m2-1', label: 'Deploy to Vercel/Replit' },
@@ -107,7 +110,8 @@ export const ROADMAP_DATA: Phase[] = [
           { id: 'p2m2-3', label: 'Document case study' }
         ],
         suggestedCertifications: [
-          { name: 'Replit Deployment Badge', url: '#' }
+          { name: 'freeCodeCamp - Web Dev Certificate', url: 'https://www.freecodecamp.org/learn/front-end-development-libraries-v9' },
+          { name: 'freeCodeCamp - Back End Development APIs', url: 'https://www.freecodecamp.org/learn/back-end-development-and-apis-v9' }
         ]
       }
     ]
@@ -131,7 +135,8 @@ export const ROADMAP_DATA: Phase[] = [
           { id: 'p3m1-2', label: 'Integrate debugging agent' }
         ],
         suggestedCertifications: [
-          { name: 'HuggingFace Developer Certificate', url: '#' }
+          { name: 'HuggingFace - NLP Course Free', url: 'https://huggingface.co/learn/nlp-course' },
+          { name: 'freeCodeCamp - JavaScript Certificate', url: 'https://www.freecodecamp.org/learn/javascript-v9' }
         ]
       }
     ]
@@ -151,7 +156,7 @@ export const PORTFOLIO_CHECKLIST: PortfolioItem[] = [
 
 export const TOOLS_STACK = [
   { name: 'NotebookLM', category: 'Research', url: 'https://notebooklm.google.com/' },
-  { name: 'Perplexity', category: 'Search', url: 'https://perplexity.ai/' },
+  { name: 'Perplexity', category: 'Search', url: 'https://www.perplexity.ai/' },
   { name: 'Bolt.new', category: 'Development', url: 'https://bolt.new/' },
   { name: 'n8n', category: 'Agents', url: 'https://n8n.io/' },
   { name: 'Ollama', category: 'Local LLMs', url: 'https://ollama.com/' },
