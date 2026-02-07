@@ -555,9 +555,9 @@ export const TOOLS_STACK = [
   { name: 'IFTTT', category: 'Automation', url: 'https://ifttt.com/' },
   
   // AI-Powered Automation Integrations
-  { name: 'n8n + OpenAI Integration', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/n8n-nodes-langchain.openai/' },
-  { name: 'n8n + Claude API', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/n8n-nodes-langchain.anthropic/' },
-  { name: 'n8n + Google Gemini', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/n8n-nodes-langchain.googlegemini/' },
+  { name: 'n8n + OpenAI Integration', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/' },
+  { name: 'n8n + Claude API', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/' },
+  { name: 'n8n + Google Gemini', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/' },
   { name: 'LangChain for n8n', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/' },
   
   // Workflow Templates & Community
