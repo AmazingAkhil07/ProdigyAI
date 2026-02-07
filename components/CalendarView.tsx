@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { UserProgress } from '../types';
+import { getLocalDateString } from '../utils/dateUtils';
 
 interface CalendarViewProps {
   progress: UserProgress;
@@ -18,8 +19,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
 
   // Get tasks for selected date
   const tasksOnSelectedDate = useMemo(() => {
-    const localDate = new Date(selectedDate.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-    const dateStr = localDate.toISOString().split('T')[0];
+    const dateStr = getLocalDateString(selectedDate);
     const entry = progress.taskHistory.find(h => h.date === dateStr);
     return entry?.tasks || [];
   }, [selectedDate, progress.taskHistory]);
@@ -27,8 +27,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
   // Tile content to show dots on dates with activity
   const tileContent = ({ date, view }: { date: Date; view: string }) => {
     if (view === 'month') {
-      const localDate = new Date(date.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-      const dateStr = localDate.toISOString().split('T')[0];
+      const dateStr = getLocalDateString(date);
       const entry = progress.taskHistory.find(h => h.date === dateStr);
       
       if (entry && entry.tasks.length > 0) {
@@ -45,7 +44,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
   // Style tiles based on activity
   const tileClassName = ({ date, view }: { date: Date; view: string }) => {
     if (view === 'month') {
-      const dateStr = date.toISOString().split('T')[0];
+      const dateStr = getLocalDateString(date);
       const hasActivity = taskCompletionDates.includes(dateStr);
       
       if (hasActivity) {

@@ -20,6 +20,7 @@ import { PomodoroTimer } from './components/PomodoroTimer';
 import { LearningOutcomes } from './components/LearningOutcomes';
 import { FocusTracker } from './components/FocusTracker';
 import { WeeklyScheduler } from './components/WeeklyScheduler';
+import { getLocalDateString } from './utils/dateUtils';
 
 const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgress) => void }> = ({ progress, setProgress }) => {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'roadmap' | 'resources' | 'profile' | 'scheduler' | 'timer' | 'notifications'>('dashboard');
@@ -43,15 +44,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
 
   // Calculate and update streak
   useEffect(() => {
-    // Get today's date in India timezone (IST: UTC+5:30)
-    const indiaTime = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-    const today = indiaTime.toISOString().split('T')[0];
+    // Get today's date in local timezone
+    const today = getLocalDateString();
     const lastLogin = progress.lastLoginDate || '';
     
     if (lastLogin !== today) {
-      const yesterday = new Date(indiaTime);
+      const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
-      const yesterdayStr = yesterday.toISOString().split('T')[0];
+      const yesterdayStr = getLocalDateString(yesterday);
       
       const newStreak = lastLogin === yesterdayStr ? progress.streak + 1 : 1;
       
@@ -106,10 +106,9 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
       ? [...progress.completedTodos, id]
       : progress.completedTodos.filter(tid => tid !== id);
 
-    // Update task history for today using local time (not UTC)
+    // Update task history for today using local time
     let newTaskHistory = [...progress.taskHistory];
-    const localDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-    const today = localDate.toISOString().split('T')[0];
+    const today = getLocalDateString();
     let todayEntry = newTaskHistory.find(h => h.date === today);
     
     if (!todayEntry) {
@@ -791,7 +790,7 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
 
 const App: React.FC = () => {
   const [user, loading] = useAuthState(auth);
-  const [progress, setProgress] = useState<UserProgress>({
+  const defaultProgress: UserProgress = {
     completedTodos: [],
     portfolioItems: [],
     theme: 'dark',
@@ -801,6 +800,17 @@ const App: React.FC = () => {
     lastLoginDate: '',
     taskHistory: [],
     notes: []
+  };
+
+  // Initialize from localStorage or default
+  const [progress, setProgress] = useState<UserProgress>(() => {
+    try {
+      const savedProgress = localStorage.getItem('prodigyai_progress');
+      return savedProgress ? JSON.parse(savedProgress) : defaultProgress;
+    } catch (error) {
+      console.error('Failed to load progress from localStorage:', error);
+      return defaultProgress;
+    }
   });
   const [dataLoaded, setDataLoaded] = useState(false);
 
@@ -811,21 +821,34 @@ const App: React.FC = () => {
         .then((savedProgress) => {
           if (savedProgress) {
             setProgress(savedProgress);
+            // Also sync to localStorage
+            localStorage.setItem('prodigyai_progress', JSON.stringify(savedProgress));
           }
           setDataLoaded(true);
         })
         .catch((error) => {
-          console.error('Failed to load progress:', error);
+          console.error('Failed to load progress from Firestore:', error);
           setDataLoaded(true);
         });
+    } else if (!user && !dataLoaded) {
+      // Not logged in, just mark as loaded
+      setDataLoaded(true);
     }
   }, [user, dataLoaded]);
 
-  // Save progress to Firestore whenever it changes
+  // Save progress to localStorage immediately and Firestore when logged in
   useEffect(() => {
+    // Always save to localStorage for offline persistence
+    try {
+      localStorage.setItem('prodigyai_progress', JSON.stringify(progress));
+    } catch (error) {
+      console.error('Failed to save progress to localStorage:', error);
+    }
+
+    // Also save to Firestore if logged in
     if (user && dataLoaded) {
       firestoreService.saveProgress(progress).catch((error) => {
-        console.error('Failed to save progress:', error);
+        console.error('Failed to save progress to Firestore:', error);
       });
     }
   }, [progress, user, dataLoaded]);
