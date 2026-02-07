@@ -20,7 +20,7 @@ import { PomodoroTimer } from './components/PomodoroTimer';
 import { LearningOutcomes } from './components/LearningOutcomes';
 import { FocusTracker } from './components/FocusTracker';
 import { WeeklyScheduler } from './components/WeeklyScheduler';
-import { getLocalDateString } from './utils/dateUtils';
+import { getISTDateString } from './utils/dateUtils';
 
 const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgress) => void }> = ({ progress, setProgress }) => {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'roadmap' | 'resources' | 'profile' | 'scheduler' | 'timer' | 'notifications'>('dashboard');
@@ -44,14 +44,14 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
 
   // Calculate and update streak
   useEffect(() => {
-    // Get today's date in local timezone
-    const today = getLocalDateString();
+    // Get today's date in IST timezone
+    const today = getISTDateString();
     const lastLogin = progress.lastLoginDate || '';
     
     if (lastLogin !== today) {
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
-      const yesterdayStr = getLocalDateString(yesterday);
+      const yesterdayStr = getISTDateString(yesterday);
       
       const newStreak = lastLogin === yesterdayStr ? progress.streak + 1 : 1;
       
@@ -106,9 +106,9 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
       ? [...progress.completedTodos, id]
       : progress.completedTodos.filter(tid => tid !== id);
 
-    // Update task history for today using local time
+    // Update task history for today using IST timezone
     let newTaskHistory = [...progress.taskHistory];
-    const today = getLocalDateString();
+    const today = getISTDateString();
     let todayEntry = newTaskHistory.find(h => h.date === today);
     
     if (!todayEntry) {
