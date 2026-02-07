@@ -19,7 +19,8 @@ export const ProgressCharts: React.FC<ProgressChartsProps> = ({ taskHistory, the
     for (let i = daysToShow - 1; i >= 0; i--) {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
-      const dateStr = date.toISOString().split('T')[0];
+      const localDate = new Date(date.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+      const dateStr = localDate.toISOString().split('T')[0];
       
       // Find count for this date
       const historyEntry = taskHistory.find(h => h.date === dateStr);

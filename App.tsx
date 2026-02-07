@@ -106,9 +106,10 @@ const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgres
       ? [...progress.completedTodos, id]
       : progress.completedTodos.filter(tid => tid !== id);
 
-    // Update task history for today
+    // Update task history for today using local time (not UTC)
     let newTaskHistory = [...progress.taskHistory];
-    const today = new Date().toISOString().split('T')[0];
+    const localDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    const today = localDate.toISOString().split('T')[0];
     let todayEntry = newTaskHistory.find(h => h.date === today);
     
     if (!todayEntry) {

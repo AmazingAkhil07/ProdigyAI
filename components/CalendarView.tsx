@@ -18,7 +18,8 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
 
   // Get tasks for selected date
   const tasksOnSelectedDate = useMemo(() => {
-    const dateStr = selectedDate.toISOString().split('T')[0];
+    const localDate = new Date(selectedDate.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    const dateStr = localDate.toISOString().split('T')[0];
     const entry = progress.taskHistory.find(h => h.date === dateStr);
     return entry?.tasks || [];
   }, [selectedDate, progress.taskHistory]);
@@ -26,7 +27,8 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ progress, theme }) =
   // Tile content to show dots on dates with activity
   const tileContent = ({ date, view }: { date: Date; view: string }) => {
     if (view === 'month') {
-      const dateStr = date.toISOString().split('T')[0];
+      const localDate = new Date(date.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+      const dateStr = localDate.toISOString().split('T')[0];
       const entry = progress.taskHistory.find(h => h.date === dateStr);
       
       if (entry && entry.tasks.length > 0) {
