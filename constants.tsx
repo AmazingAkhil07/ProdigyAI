@@ -398,6 +398,30 @@ export const ROADMAP_DATA: Phase[] = [
           { id: 'p7m3-4', label: 'Create self-improving agents' }
         ],
         suggestedCertifications: []
+      },
+      {
+        id: 'p7m4',
+        name: 'n8n & No-Code Automation Workflows',
+        description: 'Build powerful AI-powered automation workflows without coding - integrate APIs, AI models, and agents',
+        learningSources: [
+          { name: 'n8n Official Documentation', url: 'https://docs.n8n.io/' },
+          { name: 'n8n Learning Hub & Courses', url: 'https://docs.n8n.io/courses/' },
+          { name: 'n8n YouTube Tutorials', url: 'https://www.youtube.com/c/n8nio' },
+          { name: 'n8n Community Workflows', url: 'https://n8n.io/workflows' },
+          { name: 'AI Integration with n8n', url: 'https://docs.n8n.io/plugins/nodes/n8n-nodes-base.openai/' },
+          { name: 'Make.com Alternative Guide', url: 'https://make.com/' }
+        ],
+        todos: [
+          { id: 'p7m4-1', label: 'Set up n8n instance (self-hosted or cloud)' },
+          { id: 'p7m4-2', label: 'Learn basic workflow building & triggers' },
+          { id: 'p7m4-3', label: 'Integrate OpenAI/Claude APIs into workflows' },
+          { id: 'p7m4-4', label: 'Build 5 AI-powered automation workflows' },
+          { id: 'p7m4-5', label: 'Create HTTP triggers for webhook integration' },
+          { id: 'p7m4-6', label: 'Connect databases (PostgreSQL, MongoDB, etc)' },
+          { id: 'p7m4-7', label: 'Build agent-powered n8n workflows' },
+          { id: 'p7m4-8', label: 'Deploy workflow to production' }
+        ],
+        suggestedCertifications: []
       }
     ]
   },
@@ -522,7 +546,22 @@ export const TOOLS_STACK = [
   { name: 'GitHub', category: 'Development', url: 'https://github.com/' },
   { name: 'Vercel', category: 'Deployment', url: 'https://vercel.com/' },
   
-  // Automation
-  { name: 'n8n', category: 'Automation', url: 'https://n8n.io/' },
-  { name: 'Make.com', category: 'Automation', url: 'https://make.com/' }
+  // No-Code Automation Platforms (n8n & Alternatives)
+  { name: 'n8n Cloud Hosted', category: 'Automation', url: 'https://n8n.cloud/' },
+  { name: 'n8n Self-Hosted', category: 'Automation', url: 'https://docs.n8n.io/hosting/' },
+  { name: 'n8n Community Workflows', category: 'Automation', url: 'https://n8n.io/workflows' },
+  { name: 'Make.com (Zapier Alternative)', category: 'Automation', url: 'https://make.com/' },
+  { name: 'Zapier', category: 'Automation', url: 'https://zapier.com/' },
+  { name: 'IFTTT', category: 'Automation', url: 'https://ifttt.com/' },
+  
+  // AI-Powered Automation Integrations
+  { name: 'n8n + OpenAI Integration', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.openai/' },
+  { name: 'n8n + Claude API', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.anthropic/' },
+  { name: 'n8n + Google Gemini', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlegenai/' },
+  { name: 'LangChain for n8n', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.langchain/' },
+  
+  // Workflow Templates & Community
+  { name: 'n8n Templates Library', category: 'Automation', url: 'https://n8n.io/workflows' },
+  { name: 'n8n Discord Community', category: 'Community', url: 'https://discord.com/invite/nV6U3fKj7Q' },
+  { name: 'n8n Forum', category: 'Community', url: 'https://community.n8n.io/' }
 ];
