@@ -20,7 +20,6 @@ import { PomodoroTimer } from './components/PomodoroTimer';
 import { LearningOutcomes } from './components/LearningOutcomes';
 import { FocusTracker } from './components/FocusTracker';
 import { WeeklyScheduler } from './components/WeeklyScheduler';
-import { PersonalizationFlow, UserProfile } from './components/PersonalizationFlow';
 
 const Dashboard: React.FC<{ progress: UserProgress; setProgress: (p: UserProgress) => void }> = ({ progress, setProgress }) => {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'roadmap' | 'resources' | 'profile' | 'scheduler' | 'timer' | 'notifications'>('dashboard');

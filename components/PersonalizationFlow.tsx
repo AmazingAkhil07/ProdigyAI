@@ -57,8 +57,9 @@ export const PersonalizationFlow: React.FC<PersonalizationFlowProps> = ({ onComp
   };
 
   const handleHoursSelect = (hours: number) => {
-    setProfile({ ...profile, hoursPerWeek: hours });
-    onComplete(profile);
+    const updatedProfile = { ...profile, hoursPerWeek: hours };
+    setProfile(updatedProfile);
+    onComplete(updatedProfile);
   };
 
   return (

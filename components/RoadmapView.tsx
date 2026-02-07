@@ -178,8 +178,8 @@ export const RoadmapView: React.FC<RoadmapViewProps> = ({ phases, completedTodos
                               <h5 className="font-semibold text-sm mb-2">✅ Todos ({module.todos.filter(t => completedTodos.includes(t.id)).length}/{module.todos.length}):</h5>
                               <ul className="space-y-1">
                                 {module.todos.map((todo) => (
-                                  <li key={todo.id} className="text-sm flex items-center">
-                                    <span className={completedTodos.includes(todo.id) ? '✓' : '○'}>
+                                  <li key={todo.id} className="text-sm flex items-center" aria-label={`${completedTodos.includes(todo.id) ? 'Completed' : 'Pending'}: ${todo.label}`}>
+                                    <span className="min-w-[1rem] text-center" role="status">
                                       {completedTodos.includes(todo.id) ? '✓' : '○'}
                                     </span>
                                     <span className="ml-2">{todo.label}</span>
