@@ -555,13 +555,13 @@ export const TOOLS_STACK = [
   { name: 'IFTTT', category: 'Automation', url: 'https://ifttt.com/' },
   
   // AI-Powered Automation Integrations
-  { name: 'n8n + OpenAI Integration', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.openai/' },
-  { name: 'n8n + Claude API', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.anthropic/' },
-  { name: 'n8n + Google Gemini', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlegenai/' },
-  { name: 'LangChain for n8n', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.langchain/' },
+  { name: 'n8n + OpenAI Integration', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/n8n-nodes-langchain.openai/' },
+  { name: 'n8n + Claude API', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/n8n-nodes-langchain.anthropic/' },
+  { name: 'n8n + Google Gemini', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/n8n-nodes-langchain.googlegemini/' },
+  { name: 'LangChain for n8n', category: 'AI Automation', url: 'https://docs.n8n.io/integrations/builtin/cluster-nodes/' },
   
   // Workflow Templates & Community
-  { name: 'n8n Templates Library', category: 'Automation', url: 'https://n8n.io/workflows' },
+  { name: 'n8n Templates Library', category: 'Automation', url: 'https://n8n.io/workflows?tab=templates' },
   { name: 'n8n Discord Community', category: 'Community', url: 'https://discord.com/invite/nV6U3fKj7Q' },
   { name: 'n8n Forum', category: 'Community', url: 'https://community.n8n.io/' }
 ];
